@@ -6,7 +6,17 @@
   <title>Guess the Number</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class = "settings" >
+    <label for = "difficulty" >Difficulty:</label>
+    <select id = "difficulty" >
+      <option value = "easy" >Easy (1-50)</option>
+      <option value = "medium" selected >Medium (1-100)</option>
+      <option value = "hard" >Hard (1-200)</option>
+    </select>
+  </div>
+
   <div class="game-container">
     <h1>🎲 Guess the Number</h1>
     <p>I have chosen a number between <strong>1 and 100</strong>. Can you guess it?</p>

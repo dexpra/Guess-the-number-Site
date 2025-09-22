@@ -1,12 +1,27 @@
 let secretNumber;
 let attempts;
+let maxAttempts;
+let maxNumber;
 
 function startGame() {
+  const difficulty = document.getElementById("difficulty").value;
+  if (difficulty === "easy") {
+    maxNumber = 50;
+    maxAttempts = 10;
+  } else if (difficulty === "medium") {
+    maxNumber = 100;
+    maxAttempts = 7;
+  } else {
+    maxNumber = 200;
+    maxAttempts = 5;
+  }
+
   secretNumber = Math.floor(Math.random() * 100) + 1;
   attempts = 0;
   document.getElementById("feedback").textContent = "";
   document.getElementById("attempts").textContent = "";
   document.getElementById("guessInput").value = "";
+  document.hetElementById("guessInput").setAttribute("max", maxNumber);
 }
 
 document.getElementById("submitGuess").addEventListener("click", function() {
@@ -33,6 +48,7 @@ document.getElementById("submitGuess").addEventListener("click", function() {
 });
 
 document.getElementById("restartGame").addEventListener("click", startGame);
+document.getElementById("difficulty").addEventListener("change", startGame);
 
 
 startGame();

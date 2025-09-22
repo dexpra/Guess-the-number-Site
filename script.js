@@ -41,7 +41,7 @@ document.getElementById("submitGuess").addEventListener("click", function() {
     document.getElementById("feedback").style.color = "green";
   }else if (attempts >= maxAttempts) {
     document.getElementById("feedback").textContent =
-    "Game over! The number was ${secretNumber}! Try again?";
+    `Game over! The number was ${secretNumber} ! Try again?`;
   } else if (userGuess < secretNumber) {
     document.getElementById("feedback").textContent = "Naah... Too low! Try again.";
     document.getElementById("feedback").style.color = "red";
